@@ -1,69 +1,49 @@
 ---
 id: ybncm
-title: Yield-Bearing Narrative Capital Markets
+title: "Yield-Bearing Narrative Capital Markets"
 sidebar_position: 3
 ---
 
 # Yield-Bearing Narrative Capital Markets
 
-
 ## 3.1 Formal Definition
 
+A Yield-Bearing Narrative Capital Market (YBNCM) is a protocol in which participants commit capital to directional claims about real-world outcomes, and that capital earns yield in decentralized finance protocols throughout the commitment period.
 
-A Yield-Bearing Narrative Capital Market (YBNCM) is a financial system with the following components:
+A narrative N consists of:
 
-- A narrative n defined by a natural-language claim C, a resolution criterion R, and a deadline T.
-- A backing pool B = {(w_i, s_i, t_i)} where w_i is a participant wallet, s_i is the committed amount, and t_i is the time of commitment.
-- A yield function Y(s_i, t_i, T) representing the yield earned on s_i committed at t_i and redeemed at T, computed from the receipt token's exchange rate.
-- A multiplier function M(w_i, t_i, T) representing the participant's combined yield multiplier at resolution time.
-- An oracle O: n → {TRUE, FALSE, REFUND} resolving the narrative at or after T.
-- A distribution function D allocating capital and yield based on oracle output.
+- A claim string describing a real-world outcome
+- A resolution time T at which an oracle evaluates the claim
+- A backing pool of participant wallets, committed amounts, and commitment timestamps
+- A yield function representing yield earned on committed capital from deposit to resolution
+- A multiplier function representing each participant's combined yield multiplier at resolution
+- An oracle function resolving the narrative to TRUE, FALSE, or REFUND at or after T
 
 ## 3.2 Distribution Rules
 
+**On TRUE resolution:** Each correct participant receives principal plus yield multiplied by their conviction and discovery multipliers. Protocol fee (2%) and creator share (0-2%) are deducted before distribution. The multiplier applies to yield only -- principal is always returned 1:1.
 
-On TRUE resolution
+**On FALSE resolution:** Principal is forfeited. Capital is distributed as follows:
 
+- 40% to Protocol treasury
+- 35% to Echo Pool (epoch redistribution to correct participants)
+- 15% to Creator Reward Pool
+- 10% to Discovery Bonus Pool (top early backers)
 
-The narrative claim is confirmed accurate. For each participant w_i:
-
-
-payout(w_i) = s_i + Y(s_i, t_i, T) × M(w_i, t_i, T)
-
-
-Protocol fee (2%) and creator share (0–2%, based on Creator Score) are deducted from the pool before distribution. The multiplier M applies to the yield portion only — principal is always returned at 1:1 regardless of multiplier tier.
-
-
-On FALSE resolution
-
-
-The narrative claim is disconfirmed. Principal is distributed as follows:
-
-- 40% → Protocol treasury
-- 35% → Echo Pool (epoch redistribution to correct participants)
-- 15% → Creator Reward Pool
-- 10% → Discovery Bonus Pool (top early backers)
-
-On REFUND
-
-
-The oracle cannot reach a determination. 100% of principal is returned to all participants. Proportional yield earned during the commitment period is also distributed. No fees apply.
-
+**On REFUND:** All participants receive their principal back. Yield is distributed pro-rata based on time committed.
 
 ## 3.3 The Receipt Token Mechanism
 
+The yield-bearing property is implemented through receipt tokens. When MAGMA routes committed capital into a DeFi yield protocol, the protocol returns a yield-bearing receipt token representing the deposited capital plus accrued interest.
 
-When a participant commits capital to a YBNCM backing pool, the capital is not held idle in the vault. Instead, the vault deposits it into the appropriate lending protocol and receives a yield-bearing receipt token in exchange. For Solana deployments, this means:
+Yield routing by token type:
 
-- SOL deposits → routed to Kamino Finance or Jito Staking
-- JUP deposits → routed to Jupiter Lend (powered by Fluid)
-- USDC deposits → routed to Kamino Lend or Save Finance
-- SKR deposits → routed to Guardian staking
+- SOL deposits: routed to Kamino Finance or Jito Staking
+- JUP deposits: routed to Jupiter Lend (powered by Fluid)
+- USDC deposits: routed to Kamino Lend or Save Finance
+- SKR deposits: routed to Guardian staking
+- All other tokens: routed to the highest-APY available protocol at time of deposit
 
-The vault records the receipt token amount and the exchange rate at deposit time. At resolution, the vault redeems the receipt and computes yield precisely:
+The yield computation is exact, not estimated from APY snapshots. It uses the actual exchange rate of the receipt token at deposit time versus redemption time. The result is multiplied by the participant's combined multiplier and distributed at resolution.
 
-
-yield = (redemption_rate / deposit_rate × s_i) − s_i
-
-
-This computation is exact — not estimated from APY snapshots — because it uses the actual exchange rates at the two moments in time. The yield is then multiplied by M(w_i, t_i, T) and distributed to the participant.
+This mechanism -- holding receipt tokens as vault collateral rather than the underlying capital itself -- is what enables yield to accrue continuously without liquidity mismatch risk. The receipt is redeemable at any time; the underlying capital earns yield; at resolution, the receipt is redeemed and obligations are met from the underlying pool.
