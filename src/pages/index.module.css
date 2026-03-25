@@ -1,23 +1,188 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+.main {
+  background: #09080C;
+  min-height: 100vh;
+}
 
-.heroBanner {
-  padding: 4rem 0;
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+.hero {
+  padding: 80px 32px 64px;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,107,53,0.12) 0%, transparent 70%);
+  border-bottom: 1px solid rgba(255,107,53,0.1);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroInner {
+  max-width: 680px;
+  margin: 0 auto;
 }
 
-.buttons {
+.heroLogo {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.heroBadge {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #FF6B35;
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 800;
+  color: #F2EEF8;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.heroSub {
+  font-size: 16px;
+  color: #9B95A8;
+  line-height: 1.7;
+  margin: 0 0 40px;
+}
+
+.heroCtas {
   display: flex;
-  align-items: center;
+  gap: 12px;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #FF6B35, #FF8C42);
+  color: #fff !important;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none !important;
+  transition: opacity 0.2s;
+}
+
+.ctaPrimary:hover {
+  opacity: 0.9;
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,107,53,0.08);
+  border: 1px solid rgba(255,107,53,0.25);
+  color: #FF6B35 !important;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none !important;
+  transition: all 0.2s;
+}
+
+.ctaSecondary:hover {
+  background: rgba(255,107,53,0.12);
+  border-color: rgba(255,107,53,0.4);
+}
+
+/* ── Cards ────────────────────────────────────────────────────────────── */
+.cards {
+  padding: 64px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,107,53,0.1);
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none !important;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.card:hover {
+  border-color: rgba(255,107,53,0.3);
+  background: rgba(255,107,53,0.04);
+  transform: translateY(-2px);
+}
+
+.cardIcon {
+  font-size: 22px;
+  color: #FF6B35;
+  margin-bottom: 12px;
+  font-family: 'Space Mono', monospace;
+}
+
+.cardTitle {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #F2EEF8;
+  margin-bottom: 8px;
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: #9B95A8;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.cardArrow {
+  margin-top: 16px;
+  color: #FF6B35;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card:hover .cardArrow {
+  opacity: 1;
+}
+
+/* ── Stats ────────────────────────────────────────────────────────────── */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  padding: 40px 32px 64px;
+  border-top: 1px solid rgba(255,107,53,0.08);
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statValue {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #FF6B35;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #5C5668;
+  letter-spacing: 1px;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
 }
