@@ -13,9 +13,9 @@ sidebar_position: 3
 A Yield-Bearing Narrative Capital Market (YBNCM) is a financial system with the following components:
 
 - A narrative n defined by a natural-language claim C, a resolution criterion R, and a deadline T.
-- A backing pool B = {(wᵢ, sᵢ, tᵢ)} where wᵢ is a participant wallet, sᵢ is the committed amount, and tᵢ is the time of commitment.
-- A yield function Y(sᵢ, tᵢ, T) representing the yield earned on sᵢ committed at tᵢ and redeemed at T, computed from the receipt token's exchange rate.
-- A multiplier function M(wᵢ, tᵢ, T) representing the participant's combined yield multiplier at resolution time.
+- A backing pool B = {(w_i, s_i, t_i)} where w_i is a participant wallet, s_i is the committed amount, and t_i is the time of commitment.
+- A yield function Y(s_i, t_i, T) representing the yield earned on s_i committed at t_i and redeemed at T, computed from the receipt token's exchange rate.
+- A multiplier function M(w_i, t_i, T) representing the participant's combined yield multiplier at resolution time.
 - An oracle O: n → {TRUE, FALSE, REFUND} resolving the narrative at or after T.
 - A distribution function D allocating capital and yield based on oracle output.
 
@@ -25,10 +25,10 @@ A Yield-Bearing Narrative Capital Market (YBNCM) is a financial system with the 
 On TRUE resolution
 
 
-The narrative claim is confirmed accurate. For each participant wᵢ:
+The narrative claim is confirmed accurate. For each participant w_i:
 
 
-payout(wᵢ) = sᵢ + Y(sᵢ, tᵢ, T) × M(wᵢ, tᵢ, T)
+payout(w_i) = s_i + Y(s_i, t_i, T) × M(w_i, t_i, T)
 
 
 Protocol fee (2%) and creator share (0–2%, based on Creator Score) are deducted from the pool before distribution. The multiplier M applies to the yield portion only — principal is always returned at 1:1 regardless of multiplier tier.
@@ -63,7 +63,7 @@ When a participant commits capital to a YBNCM backing pool, the capital is not h
 The vault records the receipt token amount and the exchange rate at deposit time. At resolution, the vault redeems the receipt and computes yield precisely:
 
 
-yield = (redemption_rate / deposit_rate × sᵢ) − sᵢ
+yield = (redemption_rate / deposit_rate × s_i) − s_i
 
 
-This computation is exact — not estimated from APY snapshots — because it uses the actual exchange rates at the two moments in time. The yield is then multiplied by M(wᵢ, tᵢ, T) and distributed to the participant.
+This computation is exact — not estimated from APY snapshots — because it uses the actual exchange rates at the two moments in time. The yield is then multiplied by M(w_i, t_i, T) and distributed to the participant.
