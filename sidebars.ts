@@ -2,75 +2,38 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   docsSidebar: [
+    { type: 'doc', id: 'introduction', label: 'Introduction' },
     {
-      type: 'doc',
-      id: 'introduction',
-      label: '👋 Introduction',
+      type: 'category', label: 'Core Protocol', collapsed: false,
+      items: ['capital-efficiency-problem','ybncm','conviction-score','discovery-multiplier','echo-pool'],
     },
     {
-      type: 'category',
-      label: 'Core Protocol',
-      collapsed: false,
-      items: [
-        'capital-efficiency-problem',
-        'ybncm',
-        'conviction-score',
-        'discovery-multiplier',
-        'echo-pool',
-      ],
+      type: 'category', label: 'Oracle System', collapsed: false,
+      items: ['oracle-architecture','narrative-categories'],
     },
     {
-      type: 'category',
-      label: 'Oracle System',
-      collapsed: false,
-      items: [
-        'oracle-architecture',
-        'narrative-categories',
-      ],
+      type: 'category', label: 'Token & Economics', collapsed: false,
+      items: ['token-economics','seeker-skr','competitive-positioning'],
     },
     {
-      type: 'category',
-      label: 'Token & Economics',
-      collapsed: false,
-      items: [
-        'token-economics',
-        'seeker-skr',
-        'competitive-positioning',
-      ],
+      type: 'category', label: 'Technical', collapsed: true,
+      items: ['technical-architecture','roadmap'],
     },
     {
-      type: 'category',
-      label: 'Technical',
-      collapsed: true,
-      items: [
-        'technical-architecture',
-        'roadmap',
-      ],
+      type: 'category', label: 'API Reference', collapsed: false,
+      items: ['api-reference'],
     },
     {
-      type: 'category',
-      label: 'API Reference',
-      collapsed: false,
-      items: [
-        'api-reference',
-      ],
+      type: 'category', label: 'Brand & Assets', collapsed: false,
+      items: ['brand-assets'],
     },
     {
-      type: 'category',
-      label: 'Legal',
-      collapsed: true,
-      items: [
-        'legal',
-      ],
+      type: 'category', label: 'Legal', collapsed: true,
+      items: ['legal'],
     },
     {
-      type: 'category',
-      label: 'Appendices',
-      collapsed: true,
-      items: [
-        'appendix-a',
-        'appendix-b',
-      ],
+      type: 'category', label: 'Appendices', collapsed: true,
+      items: ['appendix-a','appendix-b'],
     },
   ],
 };

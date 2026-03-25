@@ -71,6 +71,12 @@ export default function Home(): JSX.Element {
                 href: '/token-economics',
               },
               {
+                icon: '⦿',
+                title: 'Brand & Assets',
+                desc: 'Logos, icons, colors, and typography guidelines for integrations and press.',
+                href: '/brand-assets',
+              },
+              {
                 icon: '⟨/⟩',
                 title: 'API Reference',
                 desc: 'REST API endpoints, TypeScript SDK, webhooks, and authentication.',
