@@ -27,7 +27,7 @@ Score update rules:
 
 The Conviction Score maps to five tiers, each unlocking progressively greater yield multipliers:
 
-- Ember (0–99): 1.0× yield multiplier, 2% protocol fee
+- Ember (0–99): 1.1× yield multiplier, 2% protocol fee
 - Flare (100–299): 1.3× yield multiplier, 1.5% protocol fee
 - Magma (300–599): 1.6× yield multiplier, 1.5% protocol fee
 - Core (600–899): 2.0× yield multiplier, 1.0% protocol fee
@@ -42,7 +42,7 @@ base yield: 0.18 SOL  ×  2.5 multiplier  =  0.45 SOL yield
 Compared to an Ember-tier participant on the same narrative:
 
 
-base yield: 0.18 SOL  ×  1.0 multiplier  =  0.18 SOL yield
+base yield: 0.18 SOL  ×  1.1 multiplier  =  0.198 SOL yield
 
 
 The multiplier difference compounds across all positions over time. A participant who reaches Volcanic tier through consistent accuracy is materially better off than a new entrant on every future position they take.

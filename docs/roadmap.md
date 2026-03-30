@@ -42,6 +42,6 @@ sidebar_position: 13
 ## Post-TGE
 
 - $MAGMA token launch on Meteora DLMM and Fogo DEX
-- MAGMA NFT collection launch (10,000 NFTs, four tiers)
+- MAGMA NFT collection launch (10,000 NFTs, five tiers)
 - Arcium C-SPL privacy layer integration
 - V2 binary market — participants may back against narratives
