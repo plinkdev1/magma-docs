@@ -3,6 +3,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   docsSidebar: [
     { type: 'doc', id: 'introduction', label: 'Introduction' },
+    { type: 'doc', id: 'quickstart', label: 'Quickstart Guide' },
     {
       type: 'category', label: 'Core Protocol', collapsed: false,
       items: ['capital-efficiency-problem','ybncm','conviction-score','discovery-multiplier','echo-pool'],
@@ -16,12 +17,16 @@ const sidebars: SidebarsConfig = {
       items: ['token-economics','seeker-skr','competitive-positioning'],
     },
     {
+      type: 'category', label: 'NFT Collections', collapsed: false,
+      items: ['nft-collections','waitlist'],
+    },
+    {
       type: 'category', label: 'Technical', collapsed: true,
       items: ['technical-architecture','roadmap'],
     },
     {
       type: 'category', label: 'API Reference', collapsed: false,
-      items: ['api-reference'],
+      items: ['api-reference', 'api-agents', 'api-tiers'],
     },
     {
       type: 'category', label: 'Brand & Assets', collapsed: false,

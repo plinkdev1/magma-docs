@@ -71,6 +71,24 @@ export default function Home(): JSX.Element {
                 href: '/token-economics',
               },
               {
+                icon: '⚡',
+                title: 'Quickstart Guide',
+                desc: 'Get started with MAGMA Protocol in under 5 minutes — connect, back, earn.',
+                href: '/quickstart',
+              },
+              {
+                icon: '🔥',
+                title: 'NFT Collections',
+                desc: 'MLAVA tier cards, multipliers, Genesis raffle, and Special Edition details.',
+                href: '/nft-collections',
+              },
+              {
+                icon: '⟨/⟩',
+                title: 'AI Agents API',
+                desc: 'API endpoints, authentication, rate limits, and tier documentation for agents.',
+                href: '/api-agents',
+              },
+              {
                 icon: '⦿',
                 title: 'Brand & Assets',
                 desc: 'Logos, icons, colors, and typography guidelines for integrations and press.',
