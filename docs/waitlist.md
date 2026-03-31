@@ -47,4 +47,4 @@ Ticket weights are cumulative and never decrease. A wallet that completes multip
 
 The raffle uses Switchboard VRF for verifiable on-chain randomness. The seed and full participant list are published after execution for public verification. The raffle runs exactly once and is irreversible.
 
-Winners receive their Genesis Origin Card airdropped directly to their wallet. The Genesis card grants 1.1× Echo Pool weight — see [NFT Collections](/docs/nft-collections) for details.
+Winners receive their Genesis Origin Card airdropped directly to their wallet. The Genesis card grants 1.1× Echo Pool weight — see [NFT Collections](/nft-collections) for details.

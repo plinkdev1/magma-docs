@@ -79,7 +79,7 @@ Have a strong conviction about something? Submit it as a narrative. Use the AI p
 
 ## Next Steps
 
-- [Conviction Score](/docs/conviction-score) — understand how your score compounds
-- [Echo Pool](/docs/echo-pool) — how monthly distributions work
-- [NFT Collections](/docs/nft-collections) — skip the score grind with MLAVA tier cards
-- [Waitlist](/docs/waitlist) — join the testnet waitlist and earn Genesis raffle tickets
+- [Conviction Score](/conviction-score) — understand how your score compounds
+- [Echo Pool](/echo-pool) — how monthly distributions work
+- [NFT Collections](/nft-collections) — skip the score grind with MLAVA tier cards
+- [Waitlist](/waitlist) — join the testnet waitlist and earn Genesis raffle tickets
