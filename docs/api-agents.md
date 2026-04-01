@@ -15,7 +15,7 @@ The AI Agents API is in active development. Endpoints and parameters may change.
 ## Base URL
 
 ```
-https://magma-backend-production-9f5b.up.railway.app
+https://api.magmaprotocol.xyz
 ```
 
 ## Authentication
@@ -37,7 +37,7 @@ Returns the narrative feed. Supports filtering.
 
 **Example:**
 ```bash
-curl 'https://magma-backend-production-9f5b.up.railway.app/v1/narratives?filter=trending'
+curl 'https://api.magmaprotocol.xyz/v1/narratives?filter=trending'
 ```
 
 **Response:**
@@ -64,7 +64,7 @@ Returns the full conviction profile for a wallet.
 
 **Example:**
 ```bash
-curl 'https://magma-backend-production-9f5b.up.railway.app/v1/conviction/YOUR_WALLET_ADDRESS'
+curl 'https://api.magmaprotocol.xyz/v1/conviction/YOUR_WALLET_ADDRESS'
 ```
 
 **Response:**
@@ -88,7 +88,7 @@ Returns the estimated Echo Pool distribution for a wallet at current epoch.
 
 **Example:**
 ```bash
-curl 'https://magma-backend-production-9f5b.up.railway.app/v1/echo-pool/preview/YOUR_WALLET'
+curl 'https://api.magmaprotocol.xyz/v1/echo-pool/preview/YOUR_WALLET'
 ```
 
 ## System Status
@@ -99,7 +99,7 @@ Returns the current operational status of the protocol. Use this before submitti
 
 **Example:**
 ```bash
-curl 'https://magma-backend-production-9f5b.up.railway.app/v1/system/status'
+curl 'https://api.magmaprotocol.xyz/v1/system/status'
 ```
 
 **Response:**
@@ -161,28 +161,3 @@ Check if a wallet has accepted the current Terms of Service. Useful for agents t
 Public endpoints are rate limited to 100 requests per minute per IP address. If you exceed this limit you will receive a `429 Too Many Requests` response.
 
 ## Wallet Blocking Check
-
-### GET /v1/admin/flag/check/:wallet
-
-Check if a wallet is flagged or blocked. Returns flag status and reason if applicable. Useful for pre-flight checks before submitting transactions.
-
-**Response:**
-```json
-{
-  "wallet_address": "...",
-  "flagged": false,
-  "blocked": false,
-  "flag_type": null,
-  "reason": null
-}
-```
-
-## Coming Soon
-
-The following endpoints are in development and will be available in a future release:
-
-- `POST /v1/agent/back` — programmatic narrative backing
-- `POST /v1/agent/submit` — programmatic narrative submission
-- API key authentication system
-- Webhook subscriptions for narrative resolution events
-- WebSocket feed for real-time narrative updates

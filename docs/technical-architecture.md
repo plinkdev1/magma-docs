@@ -31,18 +31,13 @@ Capital flows:
 ## 10.2 Oracle Backend
 
 
-The oracle backend is a Node.js/TypeScript service managing multi-source queries, weighted consensus computation, and resolution instruction signing. It runs on Railway with Redis state management and BullMQ job queuing across five worker queues:
+The oracle backend is a Node.js/TypeScript service managing multi-source queries, weighted consensus computation, and resolution instruction signing. It runs on Railway with Redis state management and BullMQ job queuing across five worker queues managing narrative processing, oracle queries and weighted consensus, social publishing, DeFi yield monitoring, and Echo Pool operations.
 
-- magma-narrative-generation: voice transcription, Claude Sonnet narrative structuring, quality scoring.
-- magma-scoring: oracle queries, weighted consensus, resolution instruction building.
-- magma-social: Twitter/X, Telegram, and Discord publication of narrative events.
-- magma-defi: APY monitoring across Kamino, Meteora, Save, Jupiter Lend, Raydium.
-- magma-echo: Echo Pool accumulation, monthly distribution, Conviction Score decay.
 
 ## 10.3 Mobile Application
 
 
-The MAGMA mobile application is built with React Native and Expo, targeting Solana Mobile hardware — the Seeker phone and Samsung A55. Wallet integration uses Solana Mobile Wallet Adapter v2, supporting Phantom, Solflare, and Jupiter wallets. Anti-Sybil verification uses Civic Auth (clientId: 1ded3f12-6515-4ef0-88bb-8889fc561b6b) and Gitcoin Passport.
+The MAGMA mobile application is built with React Native and Expo, targeting Solana Mobile hardware — the Seeker phone and Samsung A55. Wallet integration uses Solana Mobile Wallet Adapter v2, supporting Phantom, Solflare, and Jupiter wallets. Anti-Sybil verification uses Civic Auth and Gitcoin Passport.
 
 
 Sixteen backing tokens are supported, each routed to its optimal yield protocol via the yield router service. Voice submission uses Whisper transcription piped through Claude Sonnet for narrative structuring. The Conviction Score, Echo Pool positions, and Discovery window status are all surfaced in the application's profile and backing interfaces.

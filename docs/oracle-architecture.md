@@ -46,13 +46,13 @@ For Social, Cultural, and Conviction categories, empirical resolution is insuffi
 Narratives submitted to Consensus Oracle Mode must include a Falsifiability Declaration (minimum 50 characters) specifying the conditions under which the claim would be false, and at least one measurable proxy metric. A Resolvability Score (0–100) is computed at submission; narratives scoring below 40 are rejected before entering the pool.
 
 
-Resolution requires ≥75% weighted agreement across all four signals. Confidence between 50% and 75% triggers a Soft Resolution with a 96-hour challenge window. Irreconcilable signals escalate to admin review.
+Resolution requires a supermajority weighted agreement across all four signals. When signals are in partial agreement, a Soft Resolution period opens during which any participant may submit a challenge. Irreconcilable signals escalate to admin review.
 
 
 ## 7.4 Admin Dispute Framework
 
 
-Admin reviews follow a structured scorecard (0–100 total) with four parts: Empirical Verification (0–40), Narrative Interpretation (0–30), Oracle Signal Review (0–20), and Consensus Signal Review (0–10, applicable to consensus categories). Scores 75–100 permit single-admin resolution; 55–74 require two independent admins completing separate scorecards; 35–54 trigger deadline extension or refund; below 35 triggers automatic refund with no override possible.
+Admin reviews follow a structured scorecard covering empirical verification, narrative interpretation, oracle signal review, and consensus signal review where applicable. Depending on the confidence level of the scorecard result, resolution is completed by a single admin, escalated to two independent admins completing separate scorecards, or — if confidence is insufficient — automatically converted to a refund with no override possible.
 
 
 All admin resolutions and their complete scorecards are permanently and publicly readable. Any participant may audit any resolution decision at any time. The scorecard must be completed before the resolution dropdown activates — admins cannot select an outcome and then construct justification.
