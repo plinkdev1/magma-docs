@@ -22,7 +22,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category', label: 'Technical', collapsed: true,
-      items: ['technical-architecture','roadmap'],
+      items: ['technical-architecture','roadmap','security'],
     },
     {
       type: 'category', label: 'API Reference', collapsed: false,
